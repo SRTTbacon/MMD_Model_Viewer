@@ -1,0 +1,32 @@
+﻿<Window x:Class="MMD_Model_Viewer_Setup.MainCode"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" 
+        Title="MMD_Viewer_Setup" Height="720" Width="1280"
+        AllowsTransparency="True" 
+        Background="#50100064"
+        WindowStyle="None" Closing="Window_Closing" Icon="MMD_Model_Viewer_C-2020_11_15-1_34_36.ico">
+    <Grid>
+        <TextBlock x:Name="MMD_Number_T" HorizontalAlignment="Left" Margin="397,46,0,0" TextWrapping="Wrap" Text="モデルの人数" Foreground="Aqua" VerticalAlignment="Top" Height="51" Width="196" FontSize="36"/>
+        <TextBox x:Name="MMD_Number" HorizontalAlignment="Left" Height="51" Margin="598,45,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="94" FontSize="36" PreviewTextInput="MMD_Number_PreviewTextInput"/>
+        <Button x:Name="MMD_Number_B" Content="決定" Foreground="Aqua" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="697,46,0,0" VerticalAlignment="Top" Width="132" Height="50" FontSize="36" Click="MMD_Number_B_Click"/>
+        <Button x:Name="MMD_Model_Select" Content="モデルを参照" Foreground="Aqua" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="24,138,0,0" VerticalAlignment="Top" Width="258" Height="84" FontSize="36" Click="MMD_Model_Select_Click"/>
+        <ListBox x:Name="MMD_Model_List" Background="Transparent" BorderBrush="Aqua" Foreground="Aqua" HorizontalAlignment="Left" Height="391" Margin="68,227,0,0" VerticalAlignment="Top" Width="1170" FontSize="36"/>
+        <Button x:Name="MMD_Motion_Select" Content="モーションを参照" Foreground="Aqua" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="350,138,0,0" VerticalAlignment="Top" Width="251" Height="84" FontSize="36" Click="MMD_Motion_Select_Click"/>
+        <Button x:Name="Save_B" Content="保存" Foreground="Aqua" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="1004,138,0,0" VerticalAlignment="Top" Width="220" Height="84" FontSize="36" Click="Save_B_Click"/>
+        <Button x:Name="Clear_B" Content="モデルをクリア" Background="Transparent" Foreground="Aqua" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="0,654,0,0" VerticalAlignment="Top" Width="220" Height="66" FontSize="36" Click="Clear_B_Click"/>
+        <Button x:Name="Music_B" Content="曲を参照" Foreground="Aqua" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="470,627,0,0" VerticalAlignment="Top" Width="359" Height="87" FontSize="36" Click="Music_B_Click"/>
+        <TextBlock x:Name="Music_T" Foreground="Aqua" HorizontalAlignment="Left" Margin="834,627,0,0" TextWrapping="Wrap" Text="選択された曲:未選択" VerticalAlignment="Top" FontSize="24" Height="88" Width="232" TextAlignment="Center"/>
+        <ProgressBar x:Name="Progress_B" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="20" Margin="-925,-525,10,5" Width="250" IsIndeterminate="true" />
+        <TextBlock x:Name="Progress_T" Foreground="Aqua" HorizontalAlignment="Left" Margin="12,32,0,0" TextWrapping="Wrap" Text="1つ目の項目を処理しています..." VerticalAlignment="Top" FontSize="27" Width="340" TextAlignment="Center"/>
+        <Button x:Name="Exit_B" Content="終了" Foreground="Aqua" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="1066,654,0,0" VerticalAlignment="Top" Width="214" Height="66" FontSize="36" Click="Exit_B_Click"/>
+        <Button x:Name="Window_2_B" Content="設定画面へ" Foreground="Aqua" Background="Transparent" BorderBrush="Aqua" FontSize="32" HorizontalAlignment="Left" Margin="1066,0,0,0" VerticalAlignment="Top" Width="213" Height="68" Click="Window_2_B_Click"/>
+        <CheckBox x:Name="Model_Overwrite_C" Content="" HorizontalAlignment="Left" Margin="454,109,0,0" VerticalAlignment="Top" Height="15" FontSize="30" Foreground="Aqua" Width="16"/>
+        <TextBlock x:Name="Model_Overwrite_T" HorizontalAlignment="Left" Margin="475,96,0,0" TextWrapping="Wrap" Text="既にあるモデルを上書き" Foreground="Aqua" FontSize="34" VerticalAlignment="Top" Height="42"/>
+        <Button x:Name="MMD_Camera_Select_B" Content="カメラを参照" Foreground="Aqua" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="675,138,0,0" VerticalAlignment="Top" Width="251" Height="84" FontSize="36" Click="MMD_Camera_Select_B_Click"/>
+        <Button x:Name="MMD_Camera_Clear_B" Content="カメラをクリア" Background="Transparent" Foreground="Aqua" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="235,654,0,0" VerticalAlignment="Top" Width="220" Height="66" FontSize="36" Click="MMD_Camera_Clear_B_Click"/>
+    </Grid>
+</Window>

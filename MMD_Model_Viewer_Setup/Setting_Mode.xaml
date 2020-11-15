@@ -1,0 +1,46 @@
+﻿<Window x:Class="MMD_Model_Viewer_Setup.Setting_Mode"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" 
+        Title="MMD_Viewer_Setup" Height="720" Width="1280"
+        AllowsTransparency="True" 
+        Background="#50306064"
+        WindowStyle="None" Icon="MMD_Model_Viewer_C-2020_11_15-1_34_36.ico">
+    <Grid>
+        <Button x:Name="Exit_B" Content="終了" Foreground="Aqua" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="1066,654,0,0" VerticalAlignment="Top" Width="214" Height="66" FontSize="36" Click="Exit_B_Click"/>
+        <Button x:Name="Window_1_B" Content="メイン画面へ" Foreground="Aqua" Background="Transparent" BorderBrush="Aqua" FontSize="32" HorizontalAlignment="Left" Margin="1066,0,0,0" VerticalAlignment="Top" Width="213" Height="68" Click="Window_1_B_Click"/>
+        <TextBlock x:Name="First_Volume_T" Foreground="Aqua" FontSize="34" HorizontalAlignment="Left" Margin="86,68,0,0" TextWrapping="Wrap" Text="起動時の音量(0～255)" VerticalAlignment="Top" Height="58" Width="339" TextAlignment="Center"/>
+        <TextBox x:Name="First_Volume" Foreground="Aqua" FontSize="32" HorizontalAlignment="Left" Height="49" Margin="130,126,0,0" TextWrapping="Wrap" Text="175" VerticalAlignment="Top" Width="237" TextAlignment="Center" PreviewTextInput="Number_Only_PreviewTextInput"/>
+        <TextBlock x:Name="First_Pan_T" Foreground="Aqua" FontSize="34" HorizontalAlignment="Left" Margin="480,68,0,0" TextWrapping="Wrap" Text="起動時のパン(-255～255)" VerticalAlignment="Top" Height="58" Width="383" TextAlignment="Center"/>
+        <TextBox x:Name="First_Pan" Foreground="Aqua" FontSize="32" HorizontalAlignment="Left" Height="49" Margin="544,126,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="237" TextAlignment="Center"/>
+        <TextBlock x:Name="First_Pitch_T" Foreground="Aqua" FontSize="30" HorizontalAlignment="Left" Margin="870,72,0,0" TextWrapping="Wrap" Text="起動時のピッチ+速度(0.3～1.6)" VerticalAlignment="Top" Height="38" Width="410" TextAlignment="Center"/>
+        <TextBox x:Name="First_Pitch" Foreground="Aqua" FontSize="32" HorizontalAlignment="Left" Height="49" Margin="950,126,0,0" TextWrapping="Wrap" Text="1.0" VerticalAlignment="Top" Width="237" TextAlignment="Center"/>
+        <TextBlock x:Name="First_Position_T" Foreground="Aqua" FontSize="34" HorizontalAlignment="Left" Margin="64,202,0,0" TextWrapping="Wrap" Text="モデルの位置間隔(推奨:0)" VerticalAlignment="Top" Height="58" Width="388" TextAlignment="Center"/>
+        <TextBox x:Name="First_Position" Foreground="Aqua" FontSize="32" HorizontalAlignment="Left" Height="49" Margin="134,260,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="238" TextAlignment="Center" PreviewTextInput="Number_Only_PreviewTextInput"/>
+        <TextBlock x:Name="Map_T" Foreground="Aqua" FontSize="34" HorizontalAlignment="Left" Margin="570,202,0,0" TextWrapping="Wrap" Text="マップ選択" VerticalAlignment="Top" Height="43" Width="184" TextAlignment="Center"/>
+        <ComboBox x:Name="Map_C" Foreground="Aqua" FontSize="30" HorizontalAlignment="Left" Margin="570,264,0,0" VerticalAlignment="Top" Width="184" Height="44"/>
+        <TextBlock x:Name="Light_T" Foreground="Aqua" FontSize="34" HorizontalAlignment="Left" Margin="928,202,0,0" TextWrapping="Wrap" Text="シェーダー(推奨:有効)" VerticalAlignment="Top" Height="43" Width="282" TextAlignment="Center"/>
+        <ComboBox x:Name="Light_C" Foreground="Aqua" FontSize="30" HorizontalAlignment="Left" Margin="988,264,0,0" VerticalAlignment="Top" Width="184" Height="44" SelectionChanged="Light_C_SelectionChanged"/>
+        <Button x:Name="OK_B" Content="適応/セーブ" Foreground="Aqua" BorderBrush="Aqua" Background="Transparent" FontSize="34" HorizontalAlignment="Left" Margin="507,642,0,0" VerticalAlignment="Top" Width="320" Height="68" Click="OK_B_Click"/>
+        <Button x:Name="Help_B" Content="?" Foreground="Aqua" FontSize="40" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Right" Margin="0,197,1206,0" VerticalAlignment="Top" Width="64" Click="Help_B_Click"/>
+        <TextBlock x:Name="Horror_T" Foreground="Aqua" FontSize="34" HorizontalAlignment="Left" Margin="910,332,0,0" TextWrapping="Wrap" Text="ホラーモード(推奨:無効)" VerticalAlignment="Top" Height="43" Width="326" TextAlignment="Center"/>
+        <ComboBox x:Name="Horror_C" Foreground="Aqua" FontSize="30" HorizontalAlignment="Left" Margin="988,389,0,0" VerticalAlignment="Top" Width="184" Height="44" SelectionChanged="Horror_C_SelectionChanged"/>
+        <Button x:Name="Horror_Help_B" Content="?" Foreground="Aqua" FontSize="40" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="1192,380,0,0" VerticalAlignment="Top" Width="64" Click="Horror_Help_B_Click"/>
+        <Button x:Name="Extra_Setting_B" Content="高度な設定" Foreground="Aqua" Background="Transparent" FontSize="35" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="71,642,0,0" VerticalAlignment="Top" Width="296" Height="68" Click="Extra_Setting_B_Click"/>
+        <Button x:Name="Extra_Setting_Help_B" Content="?" Foreground="Aqua" FontSize="40" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Right" Margin="0,645,1216,0" VerticalAlignment="Top" Width="64" Click="Extra_Setting_Help_B_Click"/>
+        <Button x:Name="Map_B" Content="マップの設定" Foreground="Aqua" Background="Transparent" FontSize="35" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="71,569,0,0" VerticalAlignment="Top" Width="296" Height="68" Click="Map_B_Click"/>
+        <ComboBox x:Name="Music_Mode_C" Foreground="Aqua" FontSize="30" HorizontalAlignment="Left" Margin="570,389,0,0" VerticalAlignment="Top" Width="184" Height="44"/>
+        <TextBlock Foreground="Aqua" FontSize="34" HorizontalAlignment="Left" Margin="464,338,0,0" TextWrapping="Wrap" Text="サウンドモード(デフォルト:Dxlib)" VerticalAlignment="Top" Height="43" Width="404" TextAlignment="Center"/>
+        <Button x:Name="Music_Mode_Help_B" Content="?" Foreground="Aqua" FontSize="40" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="394,335,0,0" VerticalAlignment="Top" Width="64" Click="Music_Mode_Help_B_Click"/>
+        <ComboBox x:Name="Shadow_Mode_C" Foreground="Aqua" FontSize="30" HorizontalAlignment="Left" Margin="159,386,0,0" VerticalAlignment="Top" Width="184" Height="44" SelectionChanged="Shadow_Mode_C_SelectionChanged"/>
+        <TextBlock Foreground="Aqua" FontSize="34" HorizontalAlignment="Left" Margin="150,332,0,0" TextWrapping="Wrap" Text="影(推奨:有効)" VerticalAlignment="Top" Height="43" Width="208" TextAlignment="Center"/>
+        <Button x:Name="Shadow_Mode_Help_B" Content="?" Foreground="Aqua" FontSize="40" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="81,332,0,0" VerticalAlignment="Top" Width="64" Click="Shadow_Mode_Help_B_Click"/>
+        <ComboBox x:Name="Shadow_Angle_C" Foreground="Aqua" FontSize="30" HorizontalAlignment="Left" Margin="159,435,0,0" VerticalAlignment="Top" Width="184" Height="44"/>
+        <TextBlock x:Name="Horror_Sky_T" Foreground="Aqua" FontSize="34" HorizontalAlignment="Left" Margin="818,462,0,0" TextWrapping="Wrap" Text="空のテクスチャを変更(推奨:有効)" VerticalAlignment="Top" Height="43" Width="462" TextAlignment="Center"/>
+        <ComboBox x:Name="Horror_Sky_C" Foreground="Aqua" FontSize="30" HorizontalAlignment="Left" Margin="988,516,0,0" VerticalAlignment="Top" Width="184" Height="44"/>
+        <Button x:Name="Horror_Sky_Help_B" Content="?" Foreground="Aqua" FontSize="40" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="1192,510,0,0" VerticalAlignment="Top" Width="64" Click="Horror_Sky_Help_B_Click"/>
+    </Grid>
+</Window>

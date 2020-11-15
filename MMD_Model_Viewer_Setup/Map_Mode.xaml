@@ -1,0 +1,39 @@
+﻿<Window x:Class="MMD_Model_Viewer_Setup.Map_Mode"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" 
+        Title="MMD_Viewer_Setup" Height="720" Width="1280"
+        AllowsTransparency="True" 
+        Background="#50600994"
+        WindowStyle="None" Icon="MMD_Model_Viewer_C-2020_11_15-1_34_36.ico">
+    <Grid>
+        <Button x:Name="Exit_B" Content="終了" Foreground="Aqua" FontSize="35" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="1007,636,0,0" VerticalAlignment="Top" Width="273" Height="84" Click="Exit_B_Click"/>
+        <Button x:Name="Back_B" Content="戻る" Foreground="Aqua" FontSize="35" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="0,636,0,0" VerticalAlignment="Top" Width="255" Height="84" Click="Back_B_Click"/>
+        <Button x:Name="Map_Select_B" Content="マップを参照" Foreground="Aqua" FontSize="35" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="434,44,0,0" VerticalAlignment="Top" Width="400" Height="84" Click="Map_Select_B_Click"/>
+        <TextBlock x:Name="Map_Select_T" HorizontalAlignment="Left" Margin="881,10,0,0" TextWrapping="Wrap" Text="選択されているマップ:" Foreground="Aqua" FontSize="33" VerticalAlignment="Top" Height="143" Width="389"/>
+        <TextBox x:Name="Map_Scale_T" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Height="50" Margin="156,214,0,0" TextWrapping="Wrap" Text="1" FontSize="35" Foreground="Aqua" VerticalAlignment="Top" Width="132" TextAlignment="Center" PreviewTextInput="Map_Scale_T_PreviewTextInput"/>
+        <TextBlock HorizontalAlignment="Left" Margin="68,158,0,0" TextWrapping="Wrap" Text="マップサイズ(デフォルト:1)" Foreground="Aqua" FontSize="33" VerticalAlignment="Top" Height="41" Width="320"/>
+        <Button x:Name="Map_Scale_Help_B" Content="?" Foreground="Aqua" FontSize="35" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="1,154,0,0" VerticalAlignment="Top" Width="62" Height="51" Click="Map_Scale_Help_B_Click"/>
+        <Button x:Name="Save_B" Content="保存" Foreground="Aqua" FontSize="35" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="480,636,0,0" VerticalAlignment="Top" Width="354" Height="84" Click="Save_B_Click"/>
+        <TextBox x:Name="Map_Position_X" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Height="50" Margin="516,214,0,0" TextWrapping="Wrap" Text="0" FontSize="35" Foreground="Aqua" VerticalAlignment="Top" Width="132" TextAlignment="Center"/>
+        <TextBox x:Name="Map_Position_Y" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Height="50" Margin="727,214,0,0" TextWrapping="Wrap" Text="0" FontSize="35" Foreground="Aqua" VerticalAlignment="Top" Width="132" TextAlignment="Center"/>
+        <TextBox x:Name="Map_Position_Z" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Height="50" Margin="932,214,0,0" TextWrapping="Wrap" Text="0" FontSize="35" Foreground="Aqua" VerticalAlignment="Top" Width="132" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="669,158,0,0" TextWrapping="Wrap" Text="位置(デフォルト:0)" Foreground="Aqua" FontSize="33" VerticalAlignment="Top" Height="41" Width="233"/>
+        <TextBlock HorizontalAlignment="Left" Margin="472,217,0,0" TextWrapping="Wrap" Text="X :" Foreground="Aqua" FontSize="33" VerticalAlignment="Top" Height="41" Width="39"/>
+        <TextBlock HorizontalAlignment="Left" Margin="683,214,0,0" TextWrapping="Wrap" Text="Y :" Foreground="Aqua" FontSize="33" VerticalAlignment="Top" Height="41" Width="39"/>
+        <TextBlock HorizontalAlignment="Left" Margin="888,214,0,0" TextWrapping="Wrap" Text="Z :" Foreground="Aqua" FontSize="33" VerticalAlignment="Top" Height="41" Width="39"/>
+        <ProgressBar x:Name="Wait_P" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="22" Margin="421,426,404,272" IsIndeterminate="true" />
+        <TextBlock x:Name="Wait_T" HorizontalAlignment="Left" Margin="412,352,0,0" TextWrapping="Wrap" Text="処理中です。しばらくお待ちください" Foreground="Aqua" FontSize="33" VerticalAlignment="Top" Height="42" Width="464" TextAlignment="Center"/>
+        <Button x:Name="Delete_B" Content="マップ削除" Foreground="Aqua" FontSize="35" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" VerticalAlignment="Top" Width="310" Height="74" Click="Delete_B_Click"/>
+        <ComboBox x:Name="Sky_C" Foreground="Aqua" FontSize="30" HorizontalAlignment="Left" Margin="125,375,0,0" VerticalAlignment="Top" Width="185" Height="44" SelectionChanged="Sky_C_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="54,314,0,0" TextWrapping="Wrap" Text="空のテクスチャ" Foreground="Aqua" FontSize="35" VerticalAlignment="Top" Height="40" Width="320" TextAlignment="Center"/>
+        <TextBox x:Name="Map_Rotate_T" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Height="50" Margin="1028,375,0,0" TextWrapping="Wrap" Text="0" FontSize="35" Foreground="Aqua" VerticalAlignment="Top" Width="146" TextAlignment="Center" PreviewTextInput="Map_Scale_T_PreviewTextInput"/>
+        <TextBlock HorizontalAlignment="Left" Margin="912,329,0,0" TextWrapping="Wrap" Text="横回転(一周を360とする)" Foreground="Aqua" FontSize="33" VerticalAlignment="Top" Height="41" Width="368" TextAlignment="Center"/>
+        <Button x:Name="Sky_Help_B" Content="?" Foreground="Aqua" FontSize="35" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="40,314,0,0" VerticalAlignment="Top" Width="62" Height="51" Click="Sky_Help_B_Click"/>
+        <Menu x:Name="Menu" Background="Transparent" HorizontalAlignment="Left" Height="325" Margin="0,136,0,0" VerticalAlignment="Top" Width="1270" Visibility="Hidden"/>
+        <Button x:Name="Configs_Save_B" Content="設定のみ保存" Foreground="Aqua" FontSize="35" Background="Transparent" BorderBrush="Aqua" HorizontalAlignment="Left" Margin="480,530,0,0" VerticalAlignment="Top" Width="354" Height="84" Click="Configs_Save_B_Click"/>
+    </Grid>
+</Window>
