@@ -3,8 +3,8 @@
 #include <math.h>
 #include <string>
 #include "tinyxml2.h"
-#include "D:\Downloads\Google Downloads\Bass_C++\c\bass.h"
-#include "D:\Downloads\Google Downloads\Bass_C++\c\bass_fx.h"
+#include "bass.h"
+#include "bass_fx.h"
 
 using namespace tinyxml2;
 using String = std::string;
@@ -132,14 +132,14 @@ VECTOR CameraLookAtPosition;
 VECTOR Camera_Location;
 void Pitch_Set_Void()
 {
-    //Setting.dat‚Ìİ’è‚Ìƒsƒbƒ`‚ğ”½‰f
+    //Setting.datã®è¨­å®šã®ãƒ”ãƒƒãƒã‚’åæ˜ 
     double Pitch = First_Music_Pitch * Pitch_Set;
     SetFrequencySoundMem((int)Pitch, MusicHandle);
     PlayTime_Plus = PlayTime_Plus_Temp * PlayTime_Plus_Temp_Kakeru;
 }
 void CollRef()
 {
-    //“–‚½‚è”»’è—p‚Ìƒ‚ƒfƒ‹‚ÌˆÊ’u‚ğXV
+    //å½“ãŸã‚Šåˆ¤å®šç”¨ã®ãƒ¢ãƒ‡ãƒ«ã®ä½ç½®ã‚’æ›´æ–°
     MV1RefreshCollInfo(Model_Physics_00, -1);
     MV1RefreshCollInfo(Model_Physics_01, -1);
     MV1RefreshCollInfo(Model_Physics_02, -1);
@@ -150,7 +150,7 @@ bool CameraPositionCollCheck(VECTOR CameraPosition)
 {
     if (IsPhysicsSet && IsModelPhysicsSet)
     {
-        //“–‚½‚è”»’è(‚·‚×‚Ä)
+        //å½“ãŸã‚Šåˆ¤å®š(ã™ã¹ã¦)
         MV1_COLL_RESULT_POLY_DIM HRes_Map;
         MV1_COLL_RESULT_POLY_DIM Model_01;
         MV1_COLL_RESULT_POLY_DIM Model_02;
@@ -186,7 +186,7 @@ bool CameraPositionCollCheck(VECTOR CameraPosition)
     }
     else if (IsPhysicsSet)
     {
-        //ƒ}ƒbƒv‚Ì“–‚½‚è”»’è‚Ì‚İ
+        //ãƒãƒƒãƒ—ã®å½“ãŸã‚Šåˆ¤å®šã®ã¿
         MV1_COLL_RESULT_POLY_DIM HRes_Map;
         HRes_Map = MV1CollCheck_Capsule(MapHandle, -1, CameraPosition, CameraPosition, 1.3f);
         int HitNum_Map = HRes_Map.HitNum;
@@ -202,7 +202,7 @@ bool CameraPositionCollCheck(VECTOR CameraPosition)
     }
     else if (IsModelPhysicsSet)
     {
-        //ƒ‚ƒfƒ‹‚Ì“–‚½‚è”»’è‚Ì‚İ
+        //ãƒ¢ãƒ‡ãƒ«ã®å½“ãŸã‚Šåˆ¤å®šã®ã¿
         MV1_COLL_RESULT_POLY_DIM Model_01;
         MV1_COLL_RESULT_POLY_DIM Model_02;
         MV1_COLL_RESULT_POLY_DIM Model_03;
@@ -239,16 +239,16 @@ bool CameraPositionCollCheck(VECTOR CameraPosition)
 }
 void Shadow_Draw()
 {
-    //‰e‚Ì•`‰æ
+    //å½±ã®æç”»
     float Min_X;
     float Min_Z;
     float Max_X;
     float Max_Z;
-    int Frame_01 = MV1SearchFrame(ModelHandle_00, "“ª");
-    int Frame_02 = MV1SearchFrame(ModelHandle_01, "“ª");
-    int Frame_03 = MV1SearchFrame(ModelHandle_02, "“ª");
-    int Frame_04 = MV1SearchFrame(ModelHandle_03, "“ª");
-    int Frame_05 = MV1SearchFrame(ModelHandle_04, "“ª");
+    int Frame_01 = MV1SearchFrame(ModelHandle_00, "é ­");
+    int Frame_02 = MV1SearchFrame(ModelHandle_01, "é ­");
+    int Frame_03 = MV1SearchFrame(ModelHandle_02, "é ­");
+    int Frame_04 = MV1SearchFrame(ModelHandle_03, "é ­");
+    int Frame_05 = MV1SearchFrame(ModelHandle_04, "é ­");
     float Model_Position_01_X = MV1GetFramePosition(ModelHandle_00, Frame_01).x;
     float Model_Position_01_Z = MV1GetFramePosition(ModelHandle_00, Frame_01).z;
     float Model_Position_02_X = MV1GetFramePosition(ModelHandle_01, Frame_02).x;
@@ -373,7 +373,7 @@ public:
     }
     void Wait() 
     {
-        //w’èƒtƒŒ[ƒ€‚Ü‚Å‘Ò‚Â
+        //æŒ‡å®šãƒ•ãƒ¬ãƒ¼ãƒ ã¾ã§å¾…ã¤
         int tookTime = GetNowCount() - mStartTime;
         int waitTime = mCount * 1000 / FPS - tookTime;
         if (waitTime > 0) {
@@ -383,8 +383,8 @@ public:
 };
 void Chara_Select_Draw(int ModelHandle)
 {
-    //TPSƒ‚[ƒh‚ÌƒJƒƒ‰ˆÊ’u‚ğw’è
-    MoveAnimFrameIndex = MV1SearchFrame(ModelHandle, "“ª");
+    //TPSãƒ¢ãƒ¼ãƒ‰ã®ã‚«ãƒ¡ãƒ©ä½ç½®ã‚’æŒ‡å®š
+    MoveAnimFrameIndex = MV1SearchFrame(ModelHandle, "é ­");
     Chara_X_0 = MV1GetFramePosition(ModelHandle, MoveAnimFrameIndex).x;
     Chara_Y_0 = MV1GetFramePosition(ModelHandle, MoveAnimFrameIndex).y;
     Chara_Z_0 = MV1GetFramePosition(ModelHandle, MoveAnimFrameIndex).z;
@@ -393,7 +393,7 @@ void Chara_Select_Draw(int ModelHandle)
 }
 void SetupVMDCameraMotionParam(int CameraHandle, float Time)
 {
-    //MMD‚ÌƒJƒƒ‰‚ğ”½‰f(‚È‚º‚©”½‰f‚³‚ê‚È‚¢‚Æ‚«‚ª‚ ‚é)
+    //MMDã®ã‚«ãƒ¡ãƒ©ã‚’åæ˜ (ãªãœã‹åæ˜ ã•ã‚Œãªã„ã¨ããŒã‚ã‚‹)
     MATRIX VRotMat, HRotMat, MixRotMat, TwistRotMat;
     VECTOR CamLoc, CamDir;
     VECTOR Location, Rotation, CamUp;
@@ -521,7 +521,7 @@ void Model_Opacity_Change()
 }
 void Dance_Loop()
 {
-    //ƒƒCƒ“ƒR[ƒh
+    //ãƒ¡ã‚¤ãƒ³ã‚³ãƒ¼ãƒ‰
     CameraLookAtPosition.x = 0;
     CameraLookAtPosition.y = 0;
     CameraLookAtPosition.z = 0;
@@ -540,18 +540,18 @@ void Dance_Loop()
     Fps fps;
     SetUseZBuffer3D(TRUE);
     SetWriteZBuffer3D(TRUE);
-    //ƒ‹[ƒv
+    //ãƒ«ãƒ¼ãƒ—
     while (ProcessMessage() == 0)
     {
-        //EscapeƒL[‚ÅI—¹
+        //Escapeã‚­ãƒ¼ã§çµ‚äº†
         if (CheckHitKey(KEY_INPUT_ESCAPE) != 0)
         {
             break;
         }
-        //fps‚ğXV
+        //fpsã‚’æ›´æ–°
         fps.Update();
         ClearDrawScreen();
-        //ˆ——‚¿‘Îô
+        //å‡¦ç†è½ã¡å¯¾ç­–
         if (IsFrameRateLock)
         {
             if (IsBASSMode)
@@ -568,18 +568,18 @@ void Dance_Loop()
         {
             PlayTime += PlayTime_Plus;
         }
-        //ƒ}ƒEƒX‚ÌˆÚ“®—Ê‚ğæ“¾
+        //ãƒã‚¦ã‚¹ã®ç§»å‹•é‡ã‚’å–å¾—
         int Position_X_Now = 0;
         int Position_Y_Now = 0;
         GetMousePoint(&Position_X_Now, &Position_Y_Now);
-        //1ƒtƒŒ[ƒ€‚ ‚½‚è‚Ìƒ}ƒEƒX‚ÌˆÚ“®‹——£‚ğæ“¾
+        //1ãƒ•ãƒ¬ãƒ¼ãƒ ã‚ãŸã‚Šã®ãƒã‚¦ã‚¹ã®ç§»å‹•è·é›¢ã‚’å–å¾—
         int Move_MouseX = (int)Position_X_Now - (int)w / 2;
         int Move_MouseY = (int)Position_Y_Now - (int)h / 2;
-        //ƒEƒBƒ“ƒhƒE‚ªƒAƒNƒeƒBƒu‚©
+        //ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‹
         bool ActiveFlag = (GetMainWindowHandle() == GetForegroundWindow());
         if (PlayTime >= TotalTime)
         {
-            //‹È‚ªI‚í‚Á‚½‚çÅ‰‚©‚ç
+            //æ›²ãŒçµ‚ã‚ã£ãŸã‚‰æœ€åˆã‹ã‚‰
             PlayTime = 0.0f;
             Stop = false;
             if (IsBASSMode)
@@ -590,13 +590,13 @@ void Dance_Loop()
             }
             else
             {
-                //LONGLONG(1)ˆÈã‚É‚µ‚È‚¢‚Æ‹È‚ÌÄ¶ˆÊ’u‚ª‚¨‚©‚µ‚­‚È‚é
+                //LONGLONG(1)ä»¥ä¸Šã«ã—ãªã„ã¨æ›²ã®å†ç”Ÿä½ç½®ãŒãŠã‹ã—ããªã‚‹
                 StopSoundMem(MusicHandle);
                 SetSoundCurrentPosition(static_cast<LONGLONG>(1), MusicHandle);
                 PlaySoundMem(MusicHandle, DX_PLAYTYPE_LOOP, FALSE);
             }
         }
-        //5•b‚²‚Æ‚Éƒ‚[ƒVƒ‡ƒ“‚ÌÄ¶ˆÊ’u‚ğC³
+        //5ç§’ã”ã¨ã«ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ã®å†ç”Ÿä½ç½®ã‚’ä¿®æ­£
         if (IsBASSMode && !Stop && !IsFrameRateLock)
         {
             if ((int)PlayTime % 300 == 0)
@@ -614,22 +614,22 @@ void Dance_Loop()
         }
         if (FPS_Camera == false && Camera_VMD == false)
         {
-            //ƒLƒƒƒ‰ƒNƒ^[‚Ì“–‚½‚è”»’è‚ÌˆÊ’u‚ğXV
+            //ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã®å½“ãŸã‚Šåˆ¤å®šã®ä½ç½®ã‚’æ›´æ–°
             if (IsModelPhysicsSet)
             {
-                int Frame_01 = MV1SearchFrame(ModelHandle_00, "“ª");
+                int Frame_01 = MV1SearchFrame(ModelHandle_00, "é ­");
                 float Model_01_X = MV1GetFramePosition(ModelHandle_00, Frame_01).x;
                 float Model_01_Z = MV1GetFramePosition(ModelHandle_00, Frame_01).z;
-                int Frame_02 = MV1SearchFrame(ModelHandle_01, "“ª");
+                int Frame_02 = MV1SearchFrame(ModelHandle_01, "é ­");
                 float Model_02_X = MV1GetFramePosition(ModelHandle_01, Frame_02).x;
                 float Model_02_Z = MV1GetFramePosition(ModelHandle_01, Frame_02).z;
-                int Frame_03 = MV1SearchFrame(ModelHandle_02, "“ª");
+                int Frame_03 = MV1SearchFrame(ModelHandle_02, "é ­");
                 float Model_03_X = MV1GetFramePosition(ModelHandle_02, Frame_03).x;
                 float Model_03_Z = MV1GetFramePosition(ModelHandle_02, Frame_03).z;
-                int Frame_04 = MV1SearchFrame(ModelHandle_03, "“ª");
+                int Frame_04 = MV1SearchFrame(ModelHandle_03, "é ­");
                 float Model_04_X = MV1GetFramePosition(ModelHandle_03, Frame_04).x;
                 float Model_04_Z = MV1GetFramePosition(ModelHandle_03, Frame_04).z;
-                int Frame_05 = MV1SearchFrame(ModelHandle_04, "“ª");
+                int Frame_05 = MV1SearchFrame(ModelHandle_04, "é ­");
                 float Model_05_X = MV1GetFramePosition(ModelHandle_04, Frame_04).x;
                 float Model_05_Z = MV1GetFramePosition(ModelHandle_04, Frame_05).z;
                 MV1SetPosition(Model_Physics_00, VGet(Model_01_X, Model_01_Y, Model_01_Z));
@@ -639,12 +639,12 @@ void Dance_Loop()
                 MV1SetPosition(Model_Physics_04, VGet(Model_05_X, Model_05_Y, Model_05_Z));
                 CollRef();
             }
-            //TPSƒ‚[ƒh‚Å‚È‚­AMMD‚ÌƒJƒƒ‰‚Å‚à‚È‚¢ê‡‚ÌƒJƒƒ‰‚ÌˆÚ“®
+            //TPSãƒ¢ãƒ¼ãƒ‰ã§ãªãã€MMDã®ã‚«ãƒ¡ãƒ©ã§ã‚‚ãªã„å ´åˆã®ã‚«ãƒ¡ãƒ©ã®ç§»å‹•
             if (CheckHitKey(KEY_INPUT_W) > 0)
             {
                 if (IsPhysicsSet || IsModelPhysicsSet)
                 {
-                    //CameraPositionCollCheck‚ªtrue‚¾‚Á‚½ê‡‚Ì‚İƒJƒƒ‰‚ğˆÚ“®
+                    //CameraPositionCollCheckãŒtrueã ã£ãŸå ´åˆã®ã¿ã‚«ãƒ¡ãƒ©ã‚’ç§»å‹•
                     float X_Temp = (float)sin(-angleY) * 0.125f * FPS_Kakeru;
                     float Z_Temp = (float)cos(-angleY) * 0.125f * FPS_Kakeru;
                     if (CameraPositionCollCheck(VGet(cameraX + ((x + X_Temp) * 10), cameraY + (y * 10), cameraZ + (z * 10))))
@@ -812,7 +812,7 @@ void Dance_Loop()
         }
         else
         {
-            //TPSƒ‚[ƒh‚¾‚Á‚½ê‡
+            //TPSãƒ¢ãƒ¼ãƒ‰ã ã£ãŸå ´åˆ
             if (CheckHitKey(KEY_INPUT_W) > 0)
             {
                 if (Camera_Tall <= 2.0f)
@@ -872,10 +872,10 @@ void Dance_Loop()
         }
         if (!CameraPositionCollCheck(VGet(cameraX + (x * 10), cameraY + (y * 10), cameraZ + (z * 10))))
         {
-            //ƒJƒƒ‰‚ªƒ‚ƒfƒ‹‚Æd‚È‚Á‚Ä‚¢‚½‚çz‚ğ•ÏX
+            //ã‚«ãƒ¡ãƒ©ãŒãƒ¢ãƒ‡ãƒ«ã¨é‡ãªã£ã¦ã„ãŸã‚‰zã‚’å¤‰æ›´
             z += (float)cos(-static_cast<double>(angleY) - 1.5f) * -0.125f * FPS_Kakeru;
         }
-        //ƒJƒƒ‰ŠÖ˜A
+        //ã‚«ãƒ¡ãƒ©é–¢é€£
         if (CheckHitKey(KEY_INPUT_LSHIFT) > 0)
         {
             if (FPS_Camera == true)
@@ -1120,10 +1120,10 @@ void Dance_Loop()
                 }
             }
         }
-        //ƒVƒ‡[ƒgƒJƒbƒgŠÖ˜A
+        //ã‚·ãƒ§ãƒ¼ãƒˆã‚«ãƒƒãƒˆé–¢é€£
         if (CheckHitKey(KEY_INPUT_K) > 0 && Stop == false)
         {
-            //5,10•bi‚Ş
+            //5,10ç§’é€²ã‚€
             K_KEY_Tap = K_KEY_Tap + 1;
             if (K_KEY_Tap == 1)
             {
@@ -1140,7 +1140,7 @@ void Dance_Loop()
                     }
                     else
                     {
-                        //Œx‚ªo‚é‚½‚ßstatic_cast<LONGLONG>‚ğ“ü‚ê‚é
+                        //è­¦å‘ŠãŒå‡ºã‚‹ãŸã‚static_cast<LONGLONG>ã‚’å…¥ã‚Œã‚‹
                         StopSoundMem(MusicHandle);
                         SetSoundCurrentTime(static_cast<LONGLONG>(PlayTime_Music) + 10000, MusicHandle);
                         PlaySoundMem(MusicHandle, DX_PLAYTYPE_LOOP, FALSE);
@@ -1172,7 +1172,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_J) > 0 && Stop == false)
         {
-            //5,10•b–ß‚é
+            //5,10ç§’æˆ»ã‚‹
             J_KEY_Tap = J_KEY_Tap + 1;
             if (J_KEY_Tap == 1)
             {
@@ -1258,7 +1258,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_M) != 0 && CheckHitKey(KEY_INPUT_R) != 0)
         {
-            //‹È‚Æƒ‚[ƒVƒ‡ƒ“‚ğ‡‚í‚¹‚é
+            //æ›²ã¨ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ã‚’åˆã‚ã›ã‚‹
             M_R_Key_Down++;
             if (M_R_Key_Down == 1)
             {
@@ -1279,7 +1279,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_F) != 0)
         {
-            //ƒLƒƒƒ‰ƒNƒ^[‹“_‚ÉØ‚è‘Ö‚¦‚é
+            //ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼è¦–ç‚¹ã«åˆ‡ã‚Šæ›¿ãˆã‚‹
             F_KEY_Tap = F_KEY_Tap + 1;
             if (F_KEY_Tap == 1)
             {
@@ -1321,7 +1321,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_LCONTROL) != 0 && CheckHitKey(KEY_INPUT_M) > 0)
         {
-            //ƒ~ƒ…[ƒg
+            //ãƒŸãƒ¥ãƒ¼ãƒˆ
             M_KEY_Tap = M_KEY_Tap + 1;
             if (M_KEY_Tap == 1)
             {
@@ -1357,7 +1357,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_M) != 0 && CheckHitKey(KEY_INPUT_S) != 0)
         {
-            //ŠÔ’â~
+            //æ™‚é–“åœæ­¢
             Stop_Key++;
             if (Stop_Key == 1 && Stop == false)
             {
@@ -1381,7 +1381,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_M) != 0 && CheckHitKey(KEY_INPUT_P) != 0)
         {
-            //’â~‚µ‚Ä‚¢‚½‚çÄ¶
+            //åœæ­¢ã—ã¦ã„ãŸã‚‰å†ç”Ÿ
             Play_Key++;
             if (Play_Key == 1 && Stop == true)
             {
@@ -1404,7 +1404,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_V) > 0 && CheckHitKey(KEY_INPUT_P) > 0)
         {
-            //‰¹—Ê‚ğã‚°‚é
+            //éŸ³é‡ã‚’ä¸Šã’ã‚‹
             if (Music_Mute == false)
             {
                 if (Music_Volume < 255)
@@ -1423,7 +1423,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_V) > 0 && CheckHitKey(KEY_INPUT_O) > 0)
         {
-            //‰¹—Ê‚ğ‰º‚°‚é
+            //éŸ³é‡ã‚’ä¸‹ã’ã‚‹
             if (Music_Mute == false)
             {
                 if (Music_Volume > 0)
@@ -1442,13 +1442,13 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_C) > 0 && CheckHitKey(KEY_INPUT_P) > 0 && Stop == false)
         {
-            //Ä¶‘¬“x‚ğã‚°‚é
+            //å†ç”Ÿé€Ÿåº¦ã‚’ä¸Šã’ã‚‹
             if (Pitch_Set <= Pitch_Max)
             {
                 Pitch_Set += Pitch_Change_Size / 10 * FPS_Kakeru;
                 if (IsBASSMode)
                 {
-                    //BASS‚ÌÄ¶‘¬“x‚ğ•ÏX
+                    //BASSã®å†ç”Ÿé€Ÿåº¦ã‚’å¤‰æ›´
                     double BASS_Pitch = 100 - Pitch_Set * 100;
                     BASS_ChannelSetAttribute(Stream, BASS_ATTRIB_TEMPO, (float)-BASS_Pitch);
                     double Now = BASS_ChannelBytes2Seconds(Stream, BASS_ChannelGetPosition(Stream, BASS_POS_BYTE));
@@ -1468,13 +1468,13 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_C) > 0 && CheckHitKey(KEY_INPUT_O) > 0 && Stop == false)
         {
-            //Ä¶‘¬“x‚ğ‰º‚°‚é
+            //å†ç”Ÿé€Ÿåº¦ã‚’ä¸‹ã’ã‚‹
             if (Pitch_Set >= Pitch_Min)
             {
                 Pitch_Set -= Pitch_Change_Size / 10 * FPS_Kakeru;
                 if (IsBASSMode)
                 {
-                    //BASS‚ÌÄ¶‘¬“x‚ğ•ÏX
+                    //BASSã®å†ç”Ÿé€Ÿåº¦ã‚’å¤‰æ›´
                     double BASS_Pitch = 100 - Pitch_Set * 100;
                     BASS_ChannelSetAttribute(Stream, BASS_ATTRIB_TEMPO, (float)-BASS_Pitch);
                     double Now = BASS_ChannelBytes2Seconds(Stream, BASS_ChannelGetPosition(Stream, BASS_POS_BYTE));
@@ -1494,7 +1494,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_H) > 0 && CheckHitKey(KEY_INPUT_P) > 0 && Stop == false)
         {
-            //ƒsƒbƒ`‚Ì‚İ‚ğã‚°‚é
+            //ãƒ”ãƒƒãƒã®ã¿ã‚’ä¸Šã’ã‚‹
             if (Music_BASS_Pitch < 20.0f)
             {
                 Music_BASS_Pitch += 0.02f;
@@ -1503,7 +1503,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_H) > 0 && CheckHitKey(KEY_INPUT_O) > 0 && Stop == false)
         {
-            //ƒsƒbƒ`‚Ì‚İ‚ğ‰º‚°‚é
+            //ãƒ”ãƒƒãƒã®ã¿ã‚’ä¸‹ã’ã‚‹
             if (Music_BASS_Pitch > -15.0f)
             {
                 Music_BASS_Pitch -= 0.02f;
@@ -1512,7 +1512,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_G) != 0)
         {
-            //MMD‚ÌƒJƒƒ‰‚ÉØ‚è‘Ö‚¦‚é
+            //MMDã®ã‚«ãƒ¡ãƒ©ã«åˆ‡ã‚Šæ›¿ãˆã‚‹
             G_Key_Down++;
             if (G_Key_Down == 1)
             {
@@ -1535,7 +1535,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_R) != 0 && CheckHitKey(KEY_INPUT_E) != 0)
         {
-            //ƒtƒŒ[ƒ€‚ğÅ‰‚©‚ç
+            //ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’æœ€åˆã‹ã‚‰
             if (IsBASSMode)
             {
                 __int64 Time2 = BASS_ChannelSeconds2Bytes(Stream, 0.4);
@@ -1551,20 +1551,20 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_P) != 0 && CheckHitKey(KEY_INPUT_D) != 0)
         {
-            //ƒpƒ“‚ğ‰º‚°‚é
-            //*ƒpƒ“‚ÍA¶‰E‚Ì‰¹—Ê”ä‚Ì‚±‚ÆB‰º‚°‚ê‚Î‰E‚ª¬‚³‚­‚È‚é
+            //ãƒ‘ãƒ³ã‚’ä¸‹ã’ã‚‹
+            //*ãƒ‘ãƒ³ã¯ã€å·¦å³ã®éŸ³é‡æ¯”ã®ã“ã¨ã€‚ä¸‹ã’ã‚Œã°å³ãŒå°ã•ããªã‚‹
             Pan--;
             ChangePanSoundMem(Pan, MusicHandle);
         }
         if (CheckHitKey(KEY_INPUT_P) != 0 && CheckHitKey(KEY_INPUT_U) != 0)
         {
-            //ƒpƒ“‚ğã‚°‚é
+            //ãƒ‘ãƒ³ã‚’ä¸Šã’ã‚‹
             Pan++;
             ChangePanSoundMem(Pan, MusicHandle);
         }
         if (CheckHitKey(KEY_INPUT_P) != 0 && CheckHitKey(KEY_INPUT_R) != 0)
         {
-            //ƒsƒbƒ`Aƒpƒ“‚ğ‰Šú‰»
+            //ãƒ”ãƒƒãƒã€ãƒ‘ãƒ³ã‚’åˆæœŸåŒ–
             Pan = 0;
             if (IsBASSMode)
             {
@@ -1586,7 +1586,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_C) != 0 && CheckHitKey(KEY_INPUT_1) != 0)
         {
-            //ƒJƒƒ‰1‚ÉØ‚è‘Ö‚¦‚é
+            //ã‚«ãƒ¡ãƒ©1ã«åˆ‡ã‚Šæ›¿ãˆã‚‹
             if (Camera_Number_First >= 1)
             {
                 Camera_Number = 1;
@@ -1594,7 +1594,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_C) != 0 && CheckHitKey(KEY_INPUT_2) != 0)
         {
-            //ƒJƒƒ‰2‚ÉØ‚è‘Ö‚¦‚é
+            //ã‚«ãƒ¡ãƒ©2ã«åˆ‡ã‚Šæ›¿ãˆã‚‹
             if (Camera_Number_First >= 2)
             {
                 Camera_Number = 2;
@@ -1602,7 +1602,7 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_C) != 0 && CheckHitKey(KEY_INPUT_3) != 0)
         {
-            //ƒJƒƒ‰3‚ÉØ‚è‘Ö‚¦‚é
+            //ã‚«ãƒ¡ãƒ©3ã«åˆ‡ã‚Šæ›¿ãˆã‚‹
             if (Camera_Number_First >= 3)
             {
                 Camera_Number = 3;
@@ -1610,14 +1610,14 @@ void Dance_Loop()
         }
         if (CheckHitKey(KEY_INPUT_C) != 0 && CheckHitKey(KEY_INPUT_Z) != 0)
         {
-            //ƒJƒƒ‰‚ÌŠp“xA‹–ì‚ğ‰Šú‰»
+            //ã‚«ãƒ¡ãƒ©ã®è§’åº¦ã€è¦–é‡ã‚’åˆæœŸåŒ–
             targetZ = 0.0f;
             Linear_Not_VMD = 1.0f;
             Linear_Plus = 0.0f;
         }
         if (CheckHitKey(KEY_INPUT_C) != 0 && CheckHitKey(KEY_INPUT_R) != 0)
         {
-            //ƒJƒƒ‰‘S”Ê‚ğ‰Šú‰»
+            //ã‚«ãƒ¡ãƒ©å…¨èˆ¬ã‚’åˆæœŸåŒ–
             if (Camera_VMD == true)
             {
                 Linear_Plus = 0.0f;
@@ -1639,7 +1639,7 @@ void Dance_Loop()
         }
         if (IsModelPositionDistance && CheckHitKey(KEY_INPUT_N) != 0)
         {
-            //•À‚Ñ‘Ö‚¦‚é
+            //ä¸¦ã³æ›¿ãˆã‚‹
             N_KEY_Tap++;
             if (N_KEY_Tap == 1 && Model_Number > 1)
             {
@@ -1654,7 +1654,7 @@ void Dance_Loop()
         {
             N_KEY_Tap = 0;
         }
-        //ƒ}ƒEƒX‚Å‹“_‚ğ•Ï‚¦‚ê‚é‚æ‚¤‚É(TPSƒ‚[ƒh‚à‘Î‰)
+        //ãƒã‚¦ã‚¹ã§è¦–ç‚¹ã‚’å¤‰ãˆã‚Œã‚‹ã‚ˆã†ã«(TPSãƒ¢ãƒ¼ãƒ‰ã‚‚å¯¾å¿œ)
         if (ActiveFlag && Camera_VMD == false && FPS_Camera == false)
         {
             float Temp = targetX + (float)Move_MouseY / (Mouse_Sensitivity * 10) * Linear_Not_VMD;
@@ -1673,7 +1673,7 @@ void Dance_Loop()
             angleY -= (float)Move_MouseX / (Mouse_Sensitivity * 10) * Linear_Not_VMD;
             targetY += (float)Move_MouseX / (Mouse_Sensitivity * 10) * Linear_Not_VMD;
         }
-        //ƒ}ƒEƒX‚ÅƒJƒƒ‰‚ÌŠp“x‚ğ•ÏX
+        //ãƒã‚¦ã‚¹ã§ã‚«ãƒ¡ãƒ©ã®è§’åº¦ã‚’å¤‰æ›´
         if (ActiveFlag && FPS_Camera == true)
         {
             FPS_CameraHAngle -= (float)Move_MouseX / 10;
@@ -1690,7 +1690,7 @@ void Dance_Loop()
                 FPS_CameraVAngle = -40.0f;
             }
         }
-        //TPSƒ‚[ƒh‚ÌƒJƒƒ‰
+        //TPSãƒ¢ãƒ¼ãƒ‰æ™‚ã®ã‚«ãƒ¡ãƒ©
         if (FPS_Camera == true)
         {
             SetupCamera_Perspective(Linear_Not_VMD);
@@ -1733,7 +1733,7 @@ void Dance_Loop()
         }
         else
         {
-            //ƒJƒƒ‰‚Ìƒ‚[ƒVƒ‡ƒ“‚ª‚ ‚ê‚ÎÀs‚È‚¯‚ê‚Îƒ}ƒEƒX‚ÌŠp“x‚ğ”½‰f
+            //ã‚«ãƒ¡ãƒ©ã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ãŒã‚ã‚Œã°å®Ÿè¡Œãªã‘ã‚Œã°ãƒã‚¦ã‚¹ã®è§’åº¦ã‚’åæ˜ 
             if (Camera_VMD == true)
             {
                 if (Camera_Number == 1)
@@ -1751,23 +1751,23 @@ void Dance_Loop()
             }
             else
             {
-                //’ÊíƒJƒƒ‰
+                //é€šå¸¸ã‚«ãƒ¡ãƒ©
                 SetupCamera_Perspective(Linear_Not_VMD);
                 SetCameraPositionAndAngle(VGet(cameraX + (x * 10), cameraY + (y * 10), cameraZ + (z * 10)), targetX, targetY, targetZ);
             }
         }
-        //‰e‚Ì•`‰æ
+        //å½±ã®æç”»
         if (IsShadowMode)
         {
             Shadow_Draw();
         }
-        //ƒ‚ƒfƒ‹‚Ì“§–¾“x‚ğ•ÏX
+        //ãƒ¢ãƒ‡ãƒ«ã®é€æ˜åº¦ã‚’å¤‰æ›´
         if (IsOpacityChange)
         {
             Model_Opacity_Change();
         }
-        //ƒ‚ƒfƒ‹‚Ì•`‰æ
-        //ƒzƒ‰[ƒ‚[ƒh‚Å‚Í•`‰æ‚·‚éƒ^ƒCƒ~ƒ“ƒO‚ªˆÙ‚È‚é‚½‚ß•ª‚¯‚Ä‚¢‚é
+        //ãƒ¢ãƒ‡ãƒ«ã®æç”»
+        //ãƒ›ãƒ©ãƒ¼ãƒ¢ãƒ¼ãƒ‰ã§ã¯æç”»ã™ã‚‹ã‚¿ã‚¤ãƒŸãƒ³ã‚°ãŒç•°ãªã‚‹ãŸã‚åˆ†ã‘ã¦ã„ã‚‹
         if (!IsHorror_Mode_And_Map_0)
         {
             MV1DrawModel(SkyHandle);
@@ -1859,14 +1859,14 @@ void Dance_Loop()
         }
         SetUseShadowMap(0, -1);
         SetUseShadowMap(1, -1);
-        //ƒ~ƒ…[ƒg‚Å‚È‚¢ê‡A‹È‚Ì‰¹—Ê‚ğ”½‰f
+        //ãƒŸãƒ¥ãƒ¼ãƒˆã§ãªã„å ´åˆã€æ›²ã®éŸ³é‡ã‚’åæ˜ 
         if (Music_Mute == false)
         {
             ChangeVolumeSoundMem(Music_Volume, MusicHandle);
         }
         if (ActiveFlag)
         {
-            //ƒ}ƒEƒX‚ğŒÅ’è
+            //ãƒã‚¦ã‚¹ã‚’å›ºå®š
             SetMousePoint((int)w / 2, (int)h / 2);
             SetMouseDispFlag(FALSE);
         }
@@ -1874,7 +1874,7 @@ void Dance_Loop()
         {
             SetMouseDispFlag(TRUE);
         }
-        //FPS‚ğ•\¦‚³‚¹‚éê‡‚ÍƒRƒƒ“ƒg‚ğŠO‚·(Œ»İ‚ÌFPS‚Íˆ—‘¬“x‚É‚æ‚è•Ï‰»‚µ‚È‚¢‚½‚ß•\¦‚³‚¹‚Ä‚¢‚Ü‚¹‚ñB)
+        //FPSã‚’è¡¨ç¤ºã•ã›ã‚‹å ´åˆã¯ã‚³ãƒ¡ãƒ³ãƒˆã‚’å¤–ã™(ç¾åœ¨ã®FPSã¯å‡¦ç†é€Ÿåº¦ã«ã‚ˆã‚Šå¤‰åŒ–ã—ãªã„ãŸã‚è¡¨ç¤ºã•ã›ã¦ã„ã¾ã›ã‚“ã€‚)
         //fps.Draw();
         //DrawFormatString(0, 0, GetColor(255, 255, 255), "%ld", BASS_ChannelGetPosition(Stream, BASS_POS_BYTE));
         ScreenFlip();
@@ -1883,7 +1883,7 @@ void Dance_Loop()
 }
 void Model_Position_Change_By_SettingFile(float Distance)
 {
-    //ƒ‚ƒfƒ‹ŠÔŠu‚ğƒZƒbƒg
+    //ãƒ¢ãƒ‡ãƒ«é–“éš”ã‚’ã‚»ãƒƒãƒˆ
     Model_Distance = Distance;
     if (Model_Number == 1)
     {
@@ -1918,16 +1918,16 @@ void Model_Position_Change_By_SettingFile(float Distance)
 }
 void Model_Load()
 {
-    //ƒ[ƒh
-    //ÀsƒfƒBƒŒƒNƒgƒŠ‚ğæ“¾
+    //ãƒ­ãƒ¼ãƒ‰
+    //å®Ÿè¡Œãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’å–å¾—
     GetCurrentDirectory(255, cdir);
-    //‰æ–ÊƒTƒCƒY‚ğæ“¾
+    //ç”»é¢ã‚µã‚¤ã‚ºã‚’å–å¾—
     GetWindowSize(&w, &h);
-    //ƒeƒLƒXƒg‚ğ•\¦
+    //ãƒ†ã‚­ã‚¹ãƒˆã‚’è¡¨ç¤º
     SetFontSize(36);
     ChangeFont("MS UI Gothic");
     ClearDrawScreen();
-    DrawString((int)(w / 3), (int)(h / 2.03), "ƒ[ƒh’†‚Å‚·B‚µ‚Î‚ç‚­‚¨‘Ò‚¿‚­‚¾‚³‚¢EEE", GetColor(255, 255, 255));
+    DrawString((int)(w / 3), (int)(h / 2.03), "ãƒ­ãƒ¼ãƒ‰ä¸­ã§ã™ã€‚ã—ã°ã‚‰ããŠå¾…ã¡ãã ã•ã„ãƒ»ãƒ»ãƒ»", GetColor(255, 255, 255));
     ScreenFlip();
     float Shadow_Size = 500.0f;
     float Shadow_Height = 250.0f;
@@ -1936,12 +1936,12 @@ void Model_Load()
     MV1SetLoadModel_PMD_PMX_AnimationFPSMode(120);
     if (!File_Exist(cdir + std::string("/Resources/Setting.dat")))
     {
-        MessageBox(NULL, TEXT("İ’èƒtƒ@ƒCƒ‹‚ª‘¶İ‚µ‚Ü‚¹‚ñB•t‘®‚Ìƒ\ƒtƒg‚Åì¬‚µ‚Ä‚­‚¾‚³‚¢B"), TEXT("ƒGƒ‰["), MB_OK);
+        MessageBox(NULL, TEXT("è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ãŒå­˜åœ¨ã—ã¾ã›ã‚“ã€‚ä»˜å±ã®ã‚½ãƒ•ãƒˆã§ä½œæˆã—ã¦ãã ã•ã„ã€‚"), TEXT("ã‚¨ãƒ©ãƒ¼"), MB_OK);
         return;
     }
     if (!File_Exist(cdir + std::string("/Load_Data.dat")))
     {
-        //ƒ†[ƒU[İ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡A‰Šú‚É“ü‚Á‚Ä‚¢‚éƒ‚ƒfƒ‹‚â‹È‚É‚·‚é
+        //ãƒ¦ãƒ¼ã‚¶ãƒ¼è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã€åˆæœŸã«å…¥ã£ã¦ã„ã‚‹ãƒ¢ãƒ‡ãƒ«ã‚„æ›²ã«ã™ã‚‹
         int StreamHandle = BASS_StreamCreateFile(false, String(cdir + String("/Resources/Music/Default.mp3")).c_str(), 0, 0, BASS_SAMPLE_FLOAT | BASS_STREAM_DECODE);
         Stream = BASS_FX_TempoCreate(StreamHandle, BASS_FX_FREESOURCE);
         ModelHandle_00 = MV1LoadModel(String(cdir + String("/Resources/Chara/IA/Model.mv1")).c_str());
@@ -1950,7 +1950,7 @@ void Model_Load()
         MusicHandle = LoadSoundMem(String(cdir + String("/Resources/Music/Default.mp3")).c_str());
         First_Music_Pitch = GetFrequencySoundMem(MusicHandle);
         Model_Number = 3;
-        //ƒJƒƒ‰‚Ìƒ‚[ƒVƒ‡ƒ“‚ª‚ ‚ê‚Î”½‰f
+        //ã‚«ãƒ¡ãƒ©ã®ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ãŒã‚ã‚Œã°åæ˜ 
         if (File_Exist(cdir + String("/Resources/Camera.vmd")))
         {
             CameraHandle1 = MV1LoadModel(String(cdir + String("/Resources/Camera.vmd")).c_str());
@@ -1969,7 +1969,7 @@ void Model_Load()
     }
     else
     {
-        //ƒ†[ƒU[İ’è‚ğ“K‰
+        //ãƒ¦ãƒ¼ã‚¶ãƒ¼è¨­å®šã‚’é©å¿œ
         tinyxml2::XMLDocument xml;
         xml.LoadFile(String(cdir + String("/Load_Data.dat")).c_str());
         XMLElement* root = xml.FirstChildElement("Save");
@@ -2030,8 +2030,8 @@ void Model_Load()
     String Temp = Setting_01_Root->FirstChildElement("Map_Select")->GetText();
     if (Temp == "0")
     {
-        //’¬ƒ}ƒbƒv
-        MapHandle = MV1LoadModel(String(cdir + String("/Resources/Map/Stage/ƒTƒ“Eƒ}ƒ‹ƒRLê_Ver1.00.mv1")).c_str());
+        //ç”ºãƒãƒƒãƒ—
+        MapHandle = MV1LoadModel(String(cdir + String("/Resources/Map/Stage/ã‚µãƒ³ãƒ»ãƒãƒ«ã‚³åºƒå ´_Ver1.00.mv1")).c_str());
         SkyHandle = MV1LoadModel(String(cdir + String("/Resources/Sky/Dome_X503.mv1")).c_str());
         OceanHandle = MV1LoadModel(String(cdir + String("/Resources/Map/Ocean/Ocean.mv1")).c_str());
         MV1SetScale(MapHandle, VGet(10.0f, 10.0f, 10.0f));
@@ -2043,7 +2043,7 @@ void Model_Load()
     }
     else if (Temp == "1")
     {
-        //“V‹óƒ}ƒbƒv
+        //å¤©ç©ºãƒãƒƒãƒ—
         MapHandle = MV1LoadModel(String(cdir + String("/Resources/Map/Space/Model.mv1")).c_str());
         SkyHandle = MV1LoadModel(String(cdir + String("/Resources/Sky/Dome_X503.mv1")).c_str());
         MV1SetScale(MapHandle, VGet(1.0f, 1.0f, 1.0f));
@@ -2055,7 +2055,7 @@ void Model_Load()
     }
     else if (Temp == "2")
     {
-        //ƒ†[ƒU[ƒ}ƒbƒv
+        //ãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒãƒƒãƒ—
         tinyxml2::XMLDocument Map_Setting_01;
         Map_Setting_01.LoadFile(String(cdir + String("/Resources/Map_Setting.dat")).c_str());
         XMLElement* Map_Setting_01_Root = Map_Setting_01.FirstChildElement("Map_Setting");
@@ -2076,7 +2076,7 @@ void Model_Load()
         MV1SetPosition(MapHandle, VGet(Map_X, Map_Y, Map_Z));
         MV1SetRotationXYZ(MapHandle, VGet(0.0f, Map_Rotate_Y * 3.141592f / 180.0f, 0.0f));
     }
-    //ƒ‚ƒfƒ‹“¯m‚ÌŠÔŠu‚ğİ’è
+    //ãƒ¢ãƒ‡ãƒ«åŒå£«ã®é–“éš”ã‚’è¨­å®š
     String Temp_02 = Setting_01_Root->FirstChildElement("Model_Position")->GetText();
     if (Temp_02 != "0")
     {
@@ -2090,7 +2090,7 @@ void Model_Load()
     String Temp_03 = Setting_01_Root->FirstChildElement("Light_Select")->GetText();
     if (Temp_03 == "0")
     {
-        //ƒ‰ƒCƒg—LŒø‚Ìê‡
+        //ãƒ©ã‚¤ãƒˆæœ‰åŠ¹ã®å ´åˆ
         SetLightEnable(TRUE);
         ShaderHandle = LoadGraph(String(cdir + String("/Resources/Effects/Shader.png")).c_str());
         if (Temp == "1")
@@ -2109,7 +2109,7 @@ void Model_Load()
     }
     else
     {
-        //ƒ‰ƒCƒg–³Œø‚Ìê‡
+        //ãƒ©ã‚¤ãƒˆç„¡åŠ¹ã®å ´åˆ
         SetLightEnable(FALSE);
         String Temp_99 = Setting_01_Root->FirstChildElement("Horror_Select")->GetText();
         if (Temp_99 == "0")
@@ -2131,7 +2131,7 @@ void Model_Load()
             }
         }
     }
-    //ƒTƒEƒ“ƒhƒ‚[ƒh‚ğ“K‰
+    //ã‚µã‚¦ãƒ³ãƒ‰ãƒ¢ãƒ¼ãƒ‰ã‚’é©å¿œ
     String Temp_04 = Setting_01_Root->FirstChildElement("Music_Mode")->GetText();
     if (Temp_04 == "0")
     {
@@ -2143,7 +2143,7 @@ void Model_Load()
     }
     if (Setting_01_Root->FirstChildElement("Shadow_Mode")->GetText() == "true")
     {
-        //‰e‚ÌŠp“x‚ğİ’è
+        //å½±ã®è§’åº¦ã‚’è¨­å®š
         String Temp_91 = Setting_01_Root->FirstChildElement("Shadow_Angle")->GetText();
         if (Temp_91 == "0")
         {
@@ -2162,7 +2162,7 @@ void Model_Load()
             Shadow_Angle = VGet(0.5f, -0.75f, -0.5f);
         }
     }
-    //ƒsƒbƒ`‚â‰¹—Ê‚ğƒZƒbƒg
+    //ãƒ”ãƒƒãƒã‚„éŸ³é‡ã‚’ã‚»ãƒƒãƒˆ
     First_Music_Pitch = GetFrequencySoundMem(MusicHandle);
     Music_Volume = std::stoi(Setting_01_Root->FirstChildElement("Volume")->GetText());
     Pitch_Set = std::stod(Setting_01_Root->FirstChildElement("Pitch")->GetText());
@@ -2170,7 +2170,7 @@ void Model_Load()
     Pan = std::stoi(Setting_01_Root->FirstChildElement("Pan")->GetText());
     ChangePanSoundMem(Pan, MusicHandle);
     Pitch_Set_Void();
-    //Ú×İ’è
+    //è©³ç´°è¨­å®š
     if (File_Exist(cdir + String("/Resources/Advance_Setting.dat")))
     {
         tinyxml2::XMLDocument Advance_Setting;
@@ -2181,7 +2181,7 @@ void Model_Load()
         IsModelPositionSet = Bool_Replace(Advance_Setting_Root->FirstChildElement("IsModelPositionSet")->GetText());
         if (IsModelPositionSet)
         {
-            //ƒ‚ƒfƒ‹‚ÌˆÊ’u‚ªw’è‚³‚ê‚Ä‚¢‚ê‚Îİ’è
+            //ãƒ¢ãƒ‡ãƒ«ã®ä½ç½®ãŒæŒ‡å®šã•ã‚Œã¦ã„ã‚Œã°è¨­å®š
             Model_01_X = std::stof(Advance_Setting_Root->FirstChildElement("Model_01_X")->GetText());
             Model_01_Y = std::stof(Advance_Setting_Root->FirstChildElement("Model_01_Y")->GetText());
             Model_01_Z = std::stof(Advance_Setting_Root->FirstChildElement("Model_01_Z")->GetText());
@@ -2210,7 +2210,7 @@ void Model_Load()
         IsPhysicsSet = Bool_Replace(Advance_Setting_Root->FirstChildElement("IsPhysicsSet")->GetText());
         IsModelPhysicsSet = Bool_Replace(Advance_Setting_Root->FirstChildElement("IsModelPhysicsSet")->GetText());
         int FPS_01 = std::stoi(Advance_Setting_Root->FirstChildElement("FPS")->GetText());
-        //FPS‚Ì’l‚É‚æ‚Á‚Äƒ‚[ƒVƒ‡ƒ“‚Ì‘¬“x‚ªˆÙ‚È‚é‚½‚ßw’è‚·‚é
+        //FPSã®å€¤ã«ã‚ˆã£ã¦ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ã®é€Ÿåº¦ãŒç•°ãªã‚‹ãŸã‚æŒ‡å®šã™ã‚‹
         if (FPS_01 == 0)
         {
             PlayTime_Plus = 1.0f;
@@ -2269,7 +2269,7 @@ void Model_Load()
     MV1SetupCollInfo(Model_Physics_02, -1);
     MV1SetupCollInfo(Model_Physics_03, -1);
     MV1SetupCollInfo(Model_Physics_04, -1);
-    //ƒ‚ƒfƒ‹‚Ì‰ŠúˆÊ’u‚ğİ’è
+    //ãƒ¢ãƒ‡ãƒ«ã®åˆæœŸä½ç½®ã‚’è¨­å®š
     MV1SetScale(SkyHandle, VGet(50.0f, 50.0f, 50.0f));
     MV1SetRotationXYZ(SkyHandle, VGet(0.0f, 0.0f, 0.0f));
     MV1SetLoadModelUsePhysicsMode(DX_LOADMODEL_PHYSICS_REALTIME);
