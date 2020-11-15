@@ -1,0 +1,4 @@
+#pragma once
+
+//ÉçÅ[Éh
+void Model_Load();
