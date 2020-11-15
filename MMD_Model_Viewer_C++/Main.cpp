@@ -2,7 +2,7 @@
 #include "Sub.h"
 #include "Function.h"
 #include "resource.h"
-#include "D:\Downloads\Google Downloads\Bass_C++\c\bass.h"
+#include "bass.h"
 
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow)
 {
@@ -10,12 +10,12 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	GetCurrentDirectory(255, cdir);
 	if (!File_Exist(std::string(cdir) + "/Resources/Setting.dat"))
 	{
-		MessageBox(NULL, "Setting.dat‚ª‘¶İ‚µ‚Ü‚¹‚ñB•t‘®‚Ìƒ\ƒtƒg‚Åì¬‚µ‚Ä‚­‚¾‚³‚¢B", "ƒGƒ‰[", MB_OK);
+		MessageBox(NULL, "Setting.datãŒå­˜åœ¨ã—ã¾ã›ã‚“ã€‚ä»˜å±ã®ã‚½ãƒ•ãƒˆã§ä½œæˆã—ã¦ãã ã•ã„ã€‚", "ã‚¨ãƒ©ãƒ¼", MB_OK);
 		return -1;
 	}
 	if (!File_Exist(std::string(cdir) + "/Resources/Advance_Setting.dat"))
 	{
-		MessageBox(NULL, "Advance_Setting.dat‚ª‘¶İ‚µ‚Ü‚¹‚ñB•t‘®‚Ìƒ\ƒtƒg‚Åì¬‚µ‚Ä‚­‚¾‚³‚¢B", "ƒGƒ‰[", MB_OK);
+		MessageBox(NULL, "Advance_Setting.datãŒå­˜åœ¨ã—ã¾ã›ã‚“ã€‚ä»˜å±ã®ã‚½ãƒ•ãƒˆã§ä½œæˆã—ã¦ãã ã•ã„ã€‚", "ã‚¨ãƒ©ãƒ¼", MB_OK);
 		return -1;
 	}
 	SetWindowIconID(IDI_ICON1);
